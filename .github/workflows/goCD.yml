@@ -23,8 +23,7 @@ jobs:
     - name: Release the Go Codes
       uses: goreleaser/goreleaser-action@v2.6.1
       with:
-       args: release
+        args: release
       env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-   
