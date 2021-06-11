@@ -70,7 +70,7 @@ jobs: # Job to execute on event
        path: upload
        
     - name: Download Content
-      uses: actions/download-artifact@2
+      uses: actions/download-artifact@v2
       with:
         name: assetDocumnets
        
