@@ -8,7 +8,7 @@ jobs: # Job to execute on event
     runs-on: ubuntu-latest # specify OS in virtual machine
     steps:
     - name: Print a greeting 
-      run:
+      run: |
        ls
        echo Hello there! # run terminal command
     
