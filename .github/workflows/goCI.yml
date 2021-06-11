@@ -49,6 +49,12 @@ jobs: # Job to execute on event
        go test -v # Command to run go test
        go test -v | go2xunit > repot.xml #tun test again and output as report.xml(to show the effect)
        ls # verify that the report is indeed created
+       
+    - name: publish unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1 #checkout unit test Reporting
+      if: always() #always do it
+      with:
+       files: report.xml #make use of a file we created
 
        
      
