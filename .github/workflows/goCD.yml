@@ -18,16 +18,13 @@ jobs:
   # uses: goreleaser/goreleaser-action@ac067437f516133269923265894e77920c3dce18
       uses: goreleaser/goreleaser-action@v2.6.1
       with:
-      args: check
+        args: check
    
     - name: Release the Go Codes
       uses: goreleaser/goreleaser-action@v2.6.1
-  with:
-   args: release
- env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+       args: release
+      env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-    distribution: # optional, default is goreleaser
-    # GoReleaser version
-  
- 
+   
