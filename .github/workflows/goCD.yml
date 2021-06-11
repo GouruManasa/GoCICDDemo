@@ -1,1 +1,32 @@
+name: Release of Go Code
 
+on:
+ create:
+  tags:
+    - v*
+    
+jobs:
+ release:
+  name: Release on GitHub
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check out codes
+      uses: actions/checkout@v2
+      
+   - name: Validate the Go Codes
+  # You may pin to the exact commit or the version.
+  # uses: goreleaser/goreleaser-action@ac067437f516133269923265894e77920c3dce18
+  uses: goreleaser/goreleaser-action@v2.6.1
+  with:
+   args: check
+ -name: Release the Go Codes
+  uses: goreleaser/goreleaser-action@v2.6.1
+  with:
+   args: release
+ env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    distribution: # optional, default is goreleaser
+    # GoReleaser version
+  
+ 
